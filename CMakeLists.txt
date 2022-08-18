@@ -5,18 +5,18 @@ if(${CMAKE_VERSION} VERSION_LESS 3.12)
 endif()
 
 project(
-    eg_project
+    makec
     VERSION 1.0
-    DESCRIPTION "Noice"
+    DESCRIPTION "makec"
 
     # Supported languages:
     # C, CXX, Fortran, ASM, Cuda, C#, Swift
     LANGUAGES CXX
 )
 
-add_executable(my_exe eg.cpp)
-add_library(my_lib eg_lib.cpp eg_lib.hpp)
-target_link_libraries(my_exe PRIVATE my_lib)
+add_executable(built_exe init.cpp)
+add_library(lib_name library.cpp library.hpp)
+target_link_libraries(built_exe PRIVATE lib_name)
 
 enable_testing()
-add_test(NAME my_exe COMMAND my_exe)
+add_test(NAME built_exe COMMAND built_exe)
